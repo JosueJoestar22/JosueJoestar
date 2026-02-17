@@ -1,0 +1,62 @@
+﻿@* ============================================
+   PÁGINA DE CONTACTO
+   ============================================ *@
+
+@model Portafolio.Models.ContactoViewModel
+
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<div class="container">
+    <div class="contacto-container">
+        <h1>Formulario de Contacto</h1>
+
+        @* Mostrar errores generales si los hay *@
+        @if (!ViewData.ModelState.IsValid && ViewData.ModelState[""].Errors.Any())
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                @ViewData.ModelState[""].Errors.First().ErrorMessage
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        <form asp-controller="Home" asp-action="Contacto" method="post">
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label">Nombre</label>
+                <input asp-for="Nombre"
+                       type="text"
+                       class="form-control"
+                       placeholder="Josue de Lima" autocomplete="off"/>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email"
+                       type="email"
+                       class="form-control"
+                       placeholder="example@example.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Mensaje" class="form-label">Mensaje</label>
+                <textarea asp-for="Mensaje"
+                          class="form-control"
+                          rows="5"
+                          placeholder="Escribe tu mensaje aquí..."></textarea>
+                <span asp-validation-for="Mensaje" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-send-fill me-2"></i>Enviar
+            </button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

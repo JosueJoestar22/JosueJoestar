@@ -1,0 +1,93 @@
+﻿/* ============================================
+   PÁGINA DE GRACIAS - ESTILOS
+   ============================================ */
+
+.gracias-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.check-icon-container {
+    margin-bottom: 30px;
+    animation: scaleIn 0.5s ease-out;
+}
+
+    .check-icon-container i {
+        font-size: 5rem;
+        color: #28a745;
+    }
+
+.gracias-titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 20px;
+}
+
+.gracias-texto {
+    font-size: 1.2rem;
+    color: #495057;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.gracias-subtexto {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 40px;
+}
+
+.gracias-botones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .gracias-botones .btn {
+        min-width: 180px;
+    }
+
+/* Animación del check */
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .gracias-container {
+        padding: 30px 20px;
+    }
+
+    .gracias-titulo {
+        font-size: 2rem;
+    }
+
+    .gracias-texto {
+        font-size: 1rem;
+    }
+
+    .check-icon-container i {
+        font-size: 4rem;
+    }
+
+    .gracias-botones {
+        flex-direction: column;
+    }
+
+        .gracias-botones .btn {
+            width: 100%;
+        }
+}

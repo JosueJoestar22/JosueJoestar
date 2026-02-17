@@ -1,0 +1,15 @@
+﻿@* ============================================
+   SECCIÓN DE PROYECTOS
+   ============================================ *@
+
+@model IEnumerable<Proyecto>
+
+@if (Model is not null)
+{
+    <section class="proyectos-section text-center">
+        <h1>Mis trabajos recientes</h1>
+        <p>Aquí puedes ver algunos de mis trabajos más recientes.</p>
+
+        <partial name="_ListadoProyectos" model="Model" />
+    </section>
+}
